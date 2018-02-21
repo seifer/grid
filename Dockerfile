@@ -4,8 +4,8 @@ ENV GOOS linux
 ENV GOARCH amd64
 ENV CGO_ENABLED 0
 
-ADD . /go/src/grid
-WORKDIR /go/src/grid
+ADD . /go/src/github.com/seifer/grid
+WORKDIR /go/src/github.com/seifer/grid
 
 RUN go build -a -o app
 
@@ -16,7 +16,7 @@ MAINTAINER Timur Nurutdinov <timur.nurutdinov@lamoda.ru>
 RUN apk add --no-cache --virtual tzdata
 RUN apk add --no-cache --virtual ca-certificates
 
-COPY --from=build /go/src/grid/app /bin/app
+COPY --from=build /go/src/github.com/seifer/grid/app /bin/app
 
 EXPOSE 8080
 

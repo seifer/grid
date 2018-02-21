@@ -3,7 +3,7 @@ package main
 import (
 	"net/http"
 
-	"grid/grid"
+	"github.com/seifer/grid/grid"
 )
 
 func main() {
